@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Profile</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-list>
+    <ion-item (click)="openModalPlace()">
+      <ion-icon name="heart" item-left></ion-icon>
+        Favourite Place
+    </ion-item>
+    <ion-item (click)="openModalContact()">
+      <ion-icon name="people" item-left></ion-icon>
+      Contact List
+    </ion-item>
+    <ion-item>
+      <ion-icon name="notifications" item-left></ion-icon>
+      Notifications
+    </ion-item>
+    <ion-item (click)="openModalBilling()">
+      <ion-icon name="cash" item-left></ion-icon>
+      Billing Information
+    </ion-item>
+    <ion-item>
+      <ion-icon name="stats" item-left></ion-icon>
+      Statistics
+    </ion-item>
+  </ion-list>
+
+</ion-content>

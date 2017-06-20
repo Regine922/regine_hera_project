@@ -1,0 +1,310 @@
+// Ionic Variables and Theming. For more info, please see:
+// http://ionicframework.com/docs/v2/theming/
+
+// Font path is used to include ionicons,
+// roboto, and noto sans fonts
+$font-path: "../assets/fonts";
+
+
+// The app direction is used to include
+// rtl styles in your app. For more info, please see:
+// http://ionicframework.com/docs/theming/rtl-support/
+$app-direction: ltr;
+
+
+@import "ionic.globals";
+
+
+// Shared Variables
+// --------------------------------------------------
+// To customize the look and feel of this app, you can override
+// the Sass variables found in Ionic's source scss files.
+// To view all the possible Ionic variables, see:
+// http://ionicframework.com/docs/v2/theming/overriding-ionic-variables/
+
+
+
+
+// Named Color Variables
+// --------------------------------------------------
+// Named colors makes it easy to reuse colors on various components.
+// It's highly recommended to change the default colors
+// to match your app's branding. Ionic uses a Sass map of
+// colors so you can add, rename and remove colors as needed.
+// The "primary" color is the only required color in the map.
+
+$colors: (
+  primary:    #f53237,
+  secondary:  #32db64,
+  danger:     #f53d3d,
+  light:      #f4f4f4,
+  dark:       #222
+);
+
+
+// App iOS Variables
+// --------------------------------------------------
+// iOS only Sass variables can go here
+
+
+
+
+// App Material Design Variables
+// --------------------------------------------------
+// Material Design only Sass variables can go here
+
+
+
+
+// App Windows Variables
+// --------------------------------------------------
+// Windows only Sass variables can go here
+
+
+
+
+// App Theme
+// --------------------------------------------------
+// Ionic apps can have different themes applied, which can
+// then be future customized. This import comes last
+// so that the above variables are used and Ionic's
+// default are overridden.
+
+@import "ionic.theme.default";
+
+
+// Ionicons
+// --------------------------------------------------
+// The premium icon font for Ionic. For more info, please see:
+// http://ionicframework.com/docs/v2/ionicons/
+
+@import "ionic.ionicons";
+
+
+// Fonts
+// --------------------------------------------------
+
+@import "roboto";
+@import "noto-sans";
+
+body,html,
+ion-app,
+ion-app > *{
+  font-family: "Gotham SSm A","Gotham SSm B","Helvetica Neue",Helvetica,Arial,sans-serif !important;
+}
+
+.menuToggle{
+  padding:1em;
+}
+
+#dest-modal{
+    padding: 1em !important;
+    background: rgba(0,0,0,.3) !important;
+    //padding-top: 10vh !important;
+}
+
+#dest-modal ion-content{
+  top:10vh !important;
+  box-shadow: 0 1px 2px rgba(0,0,0,.2) !important;
+  border-radius: 5px;
+  height:85vh;
+}
+#dest-modal ion-content .scroll-content{
+  border-radius: 5px;
+  margin-top:10px !important;
+}
+#dest-modal ion-content .item-input{
+  border:0 !important;
+}
+
+#btn-close-search{
+  font-size: 1.5em !important;
+  padding: 10px 18px !important;
+  height: auto !important;
+  border-radius: 50% !important;
+}
+
+
+#btn-close-search > ion-icon{
+  color: #f53237;
+}
+#fav-list{
+  margin-top:10px;
+  margin-bottom: 3em;
+}
+#fav-list button{
+  border-bottom:1px solid #f1f1f1 !important;
+  min-height: auto !important;
+  padding-left: 0 !important;
+}
+#fav-list button.item-ios:not([detail-none]) .item-inner{
+  margin: 0;
+  background: none !important;
+  padding-right: 10px;
+}
+#fav-list .label{
+  margin: 8px 0;
+  font-size: 14px;
+}
+
+.parent {
+position: relative;
+height: 100%;
+padding: 0 2em;
+}
+.child {
+position: absolute;
+top: 30%;
+left: 50%;
+transform: translate(-50%, -50%);
+width:100%;
+text-align: center;
+}
+
+#danger-modal ion-content{
+  //background: #f53237;
+  background: linear-gradient(270deg, #f02c2c, #ec3838, #ec4949);
+  background-size: 600% 600%;
+  -webkit-animation: AnimationName 55s ease infinite;
+  -moz-animation: AnimationName 55s ease infinite;
+  animation: AnimationName 55s ease infinite;
+}
+
+@-webkit-keyframes AnimationName {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@-moz-keyframes AnimationName {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@keyframes AnimationName {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+
+#panic{
+  color:#f53237 !important;
+  background: #fff !important;
+  box-shadow: 0 1px 2px rgba(0,0,0,.3) !important;
+  border-radius: 50%;
+  font-size: 3em;
+  padding: 40px 10px;
+  max-width: 142px;
+  height: 140px;
+  margin-bottom: 8px !important;
+}
+
+#allow-feature ion-icon{
+  //border: 1px solid #fff;
+  border-radius: 50%;
+  box-shadow: 0 1px 2px rgba(0,0,0,.3) !important;
+  margin: 0;
+  height: auto;
+  padding: 6px 9px;
+  font-size: 30px;
+  width: 46px;
+}
+
+#allow-feature ion-icon.active{
+  color:#f53237;
+  background: #fff;
+}
+#allow-feature button{
+  background: transparent !important;
+}
+#pin-modal{
+    background: rgba(0,0,0,.2) !important;
+}
+#pin-modal ion-content{
+  //top:10vh !important;
+  box-shadow: 0 1px 2px rgba(0,0,0,.3) !important;
+}
+#pin-modal .modal-wrapper{
+  transform: translateY(100%) !important;
+  height: 50%;
+}
+#pin-modal .scroll-content{
+  padding:1em;
+}
+#pin-modal #pins > ion-col{
+  padding:0 14px !important;
+}
+#pin-modal .pin{
+  border-bottom:2px solid #f53237;
+  height:40px;
+  width:100%;
+  font-size: 3em;
+  color: #f53237;
+}
+#pin-modal #numpad button{
+  background: transparent !important;
+  color:#333;
+  font-size: 1.6rem !important;
+  height: 2.1em !important;
+}
+
+.route{
+  padding:7px 10px 1em !important;
+}
+.route ion-icon{
+  font-size: 33px;
+}
+.route .button-ios{
+  text-align: center;
+  border-radius: 0 !important;
+  font-size: 13px;
+  padding:10px !important;
+  height:auto !important;
+  margin-bottom: 10px;
+  border-color:#333;
+  color:#333;
+}
+#public-route ion-icon{
+  margin-left: 5px;
+  margin-right: 5px;
+}
+#public-route ion-badge{
+  border-radius:2px;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+#public-route{
+  overflow-y: auto;
+}
+.profile{
+  width:70px;
+  height: 70px;
+  background: url('/assets/images/user.jpg') center;
+  background-position: center;
+  background-size: cover;
+  float: left;
+}
+.username{
+  color:#f5f5f5;
+  padding-left:1.5em;
+  text-align: center;
+  display: table;
+  height: 70px;
+}
+.username p{
+font-size:1.5em;
+  display: table-cell;
+  vertical-align: middle;
+}
+.menu-list{
+  padding: 0 1.5em;
+}
+.menu-list .item-inner{
+  background: none !important;
+}
+.menu-list button,
+.menu-list .item-inner{
+  border:0 !important;
+  font-weight: 400;
+  font-size: 1.1em;
+  min-height: 4rem;
+}

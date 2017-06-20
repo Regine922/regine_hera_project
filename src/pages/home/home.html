@@ -1,0 +1,111 @@
+<ion-header>
+  <ion-navbar   color="primary">
+    <button *ngIf="!alert" ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title></ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <audio id='alarm' *ngIf="alert" autoplay >
+    <source src="assets/alarm.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+  </audio>
+
+  <!--  -->
+  <div [ngStyle]="{opacity:rescue ? 1  : 0}" id="hereMap" style="box-shadow: 0 1px 2px rgba(0,0,0,.3) !important;max-width: 90%; width: 100%; margin:auto; height: 60vh;position:relative;z-index:9999; background: grey"></div>
+    <ion-list hidden>
+      <ion-item>
+        <button ion-button (click)="addMarker()">Add Marker</button>
+          <button ion-button (click)="clearMarker()">Clear Marker</button>
+      </ion-item>
+        <ion-item>
+          <ion-input type="text" placeholder="Search place" (keyup)="searchPlace($event)" [(ngModel)]="searchQuery"></ion-input>
+        </ion-item>
+    </ion-list>
+  <div [ngStyle]="{opacity:rescue ? 1  : 0}"  [hidden]="!rescue"   id="herePanel" style='z-index:99;position:absolute;height:40vh;padding:2em;padding-bottom:3em;overflow-y:auto !important;bottom:10px' > </div>
+<div hidden id='herePanel2' style='z-index:99;position:absolute;height:40vh;padding:2em;padding-bottom:3em;overflow-y:auto !important;bottom:10px' >
+Incoming : 2
+<br/>
+User 1 : 20 meters , ETA 5 minutes
+<br/>
+User 2 : 35 meters , ETA 7 minutes
+
+
+</div>
+
+ 　<div *ngIf="!rescue&&!alert" id='mapContainer'></div>
+<div class='danger-mode'  *ngIf="alert"></div>
+
+<div style='padding:0 2em;' class='parent' *ngIf="!alert">
+<div class='child' style='z-index:99999999' >
+ <ion-item id='search' *ngIf="!alert">
+   <ion-label style='margin:0;'>
+   <ion-icon name="search"></ion-icon>
+ </ion-label>
+     <ion-input (click)="openModal({})" type="text" value="" readonly placeholder='Where to go'></ion-input>
+
+   </ion-item>
+   <div *ngIf="!alert" style='position: absolute;
+    top: 0;
+    right: 0;
+    padding:5px 0;'>
+   <ion-icon (click)="openHome()"  style='
+    font-size: 2.5em;
+    border-left: 1px solid rgba(62, 62, 62, 0.11);
+    padding: 0 8px;' ios="ios-home-outline" md="ios-home-outline"></ion-icon>
+</div>
+<ion-card style='padding:1em;text-align:left;' *ngIf="showInfo">
+  <p for="" id='dest-title'>{{dest.name }}</p>
+  <div id='destination-info'>
+    <div class='info'>
+      <label for="">{{ dest.time }}</label>
+      <div class="" style='clear:both'></div>
+      <small>ETA</small>
+    </div>
+      <div class='info'>
+        <label for="">{{dest.distance}}</label>
+        <div class="" style='clear:both'></div>
+        <small>DISTANCE</small>
+      </div>
+        <div class='info'>
+          <label for="">{{dest.transport}}</label>
+          <div class="" style='clear:both'></div>
+          <small>TRANSPORT</small>
+        </div>
+  </div>
+  <div style='float:right'>
+  <ion-icon style='font-size:2em;cursor:pointer;margin-top:10px;margin-right:10px;'
+  ios="ios-mic-outline" md="ios-mic-outline"></ion-icon>
+  <ion-icon style='font-size:2em;cursor:pointer;margin-top:10px;'
+  ios="ios-camera-outline" md="ios-camera-outline"></ion-icon>
+</div>
+</ion-card>
+</div>
+</div>
+<div>
+
+<div align='center' id='pull-start'  >
+  <button  *ngIf="!alert&&showInfo" ion-button color="danger" (click)="openModalDanger({})">Hold to start</button>
+  <button  *ngIf="!alert&&!showInfo" ion-button color="danger" (click)="openModalDanger({})" disabled="">Hold to start</button>
+
+  <button  *ngIf="alert&&!rescue" ion-button color="danger" (click)="triggerAlert(false)">Hold to deactivate</button>
+  <button icon-only style='
+    right: 20px;
+    padding: 0px;
+    position: absolute;
+    bottom: 10px;
+    z-index:9999999;
+    opacity: 0.7;'  *ngIf="alert&&rescue" ion-button color="danger" (click)="triggerAlert(false)">
+<ion-icon ios="ios-hand-outline" md="ios-hand-outline"></ion-icon>
+  </button>
+
+</div>
+
+
+
+</div>
+
+</ion-content>

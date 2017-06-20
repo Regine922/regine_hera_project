@@ -1,0 +1,24 @@
+page-login {
+  #splash{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: 99999999;
+    background: #fff;
+    padding: 0 !important;
+    margin-top:-16px !important;
+  }
+  #login .text-input{
+    text-align: center !important;
+  }
+  .toolbar-ios-primary .toolbar-background-ios{
+    background: transparent !important;
+    border: 0 !important;
+  }
+
+  .scroll-content{
+    margin-top:0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+}

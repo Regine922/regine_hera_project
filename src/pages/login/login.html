@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-navbar color="primary">
+
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+  <div id='splash' align='center'>
+  <img style='margin-top:15vh;' src='assets/images/logo.png' width='150' height="auto">
+  <br/><br/><br/>
+  <div id='login' style='max-width:250px;'>
+    <ion-list inset >
+
+      <ion-item>
+        <ion-input id='username' (input)='onInputChange($event.target.value)' style='text-align:center;' type="text" placeholder='Username' value='demo001' ></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-input  style='text-align:center;' type="password" placeholder='Password' value='123456' ></ion-input>
+      </ion-item>
+
+    </ion-list>
+
+    <button ion-button full (click)="login()" >Sign in</button>
+  </div>
+  </div>
+
+</ion-content>
